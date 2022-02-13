@@ -4,7 +4,7 @@ module.exports = function (pem) {
     if (!m) return undefined;
     var type = m[1].toLowerCase();
     
-    if (pem.split('\n').slice(-2)[0] !== '-----END RSA ' + m[1] + ' KEY-----') {
+    if ((pem.split('\n').slice(-2)[0]).trim() !== '-----END RSA ' + m[1] + ' KEY-----') {
         return undefined;
     }
     
